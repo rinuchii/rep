@@ -100,16 +100,18 @@
         // dropdown
         const menuItems = document.querySelectorAll('.menu-item');
         menuItems.forEach(item => {
-            item.addEventListener('click', (e) => {
+            const link = item.querySelector('a');
+            const dropdown = item.querySelector('.dropdown');
+
+            if (dropdown) {
+                link.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
-                    const dropdown = item.querySelector('.dropdown');
-                    if (dropdown) {
-                        e.preventDefault();
-                        item.classList.toggle('active');
-                    }
+                    e.preventDefault();
+                    item.classList.toggle('active');
                 }
             });
-        });
+        }
+    });
     </script>
 <!-- pop-up окошко -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

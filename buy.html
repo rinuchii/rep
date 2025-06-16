@@ -152,16 +152,18 @@
         // Управление dropdown в мобильной версии
         const menuItems = document.querySelectorAll('.menu-item');
         menuItems.forEach(item => {
-            item.addEventListener('click', (e) => {
+            const link = item.querySelector('a');
+            const dropdown = item.querySelector('.dropdown');
+
+            if (dropdown) {
+                link.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
-                    const dropdown = item.querySelector('.dropdown');
-                    if (dropdown) {
-                        e.preventDefault();
-                        item.classList.toggle('active');
-                    }
+                    e.preventDefault();
+                    item.classList.toggle('active');
                 }
             });
-        });
+        }
+    });
     </script>
 </body>
 </html>

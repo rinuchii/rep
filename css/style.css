@@ -252,6 +252,7 @@ footer p {
     }
     .dropdown {
         position: static;
+        z-index: 0;
         width: 100%;
         box-shadow: none;
         top: 0;

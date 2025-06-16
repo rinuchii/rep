@@ -29,9 +29,9 @@
                 <a href="proj.html">Проекты</a>
                 <div class="dropdown">
                     <a href="buy.html">ЖК "Пангея"</a>
-                    <a href="#">ЖК "Лемурия"</a>
-                    <a href="#">ЖК "Атлантида"</a>
-                    <a href="#">Таунхаусы Эдем</a>
+                    <a href="buy.html">ЖК "Лемурия"</a>
+                    <a href="buy.html">ЖК "Атлантида"</a>
+                    <a href="buy.html">Таунхаусы Эдем</a>
                 </div>
             </div>
             <div class="menu-item">
@@ -101,16 +101,18 @@
         // Выпадающий список
         const menuItems = document.querySelectorAll('.menu-item');
         menuItems.forEach(item => {
-            item.addEventListener('click', (e) => {
+            const link = item.querySelector('a');
+            const dropdown = item.querySelector('.dropdown');
+
+            if (dropdown) {
+                link.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
-                    const dropdown = item.querySelector('.dropdown');
-                    if (dropdown) {
-                        e.preventDefault();
-                        item.classList.toggle('active');
-                    }
+                    e.preventDefault();
+                    item.classList.toggle('active');
                 }
             });
-        });
+        }
+    });
         // Карусель картинок
         const slidesContainer = document.querySelector('.carousel-slides');
         const slides = document.querySelectorAll('.carousel-slide');
