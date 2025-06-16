@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Купить квартиру в ЖК "Пангея"</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="../экз_сайт/css/stylebuy.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header-top">
+        <div class="top-menu">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <a href="popup.html">
+                <img src="../экз_сайт/img/call.png" alt="Phone Icon"></a>
+            </button>
+            <img src="../экз_сайт/img/user.png" alt="User Icon">
+            <div class="location">
+                <img src="../экз_сайт/img/location.png" alt="Location Icon">
+                <span>Нижний Новгород</span>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo">RinTerraBuild</div>
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+        <nav>
+            <div class="menu-item">
+                <a href="index.html">Главная</a>
+            </div>
+            <div class="menu-item">
+                <a href="proj.html">Проекты</a>
+                <div class="dropdown">
+                    <a href="#">ЖК "Пангея"</a>
+                    <a href="#">ЖК "Лемурия"</a>
+                    <a href="#">ЖК "Атлантида"</a>
+                    <a href="#">Таунхаусы Эдем</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">Ипотека</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">География</a>
+                <div class="dropdown">
+                    <a href="#">Нижний Новгород</a>
+                    <a href="#">Иваново</a>
+                    <a href="#">Москва</a>
+                    <a href="#">Самара</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">Под ключ</a>
+            </div>
+        </nav>
+    </header>
+<!--Контент-->  
+    <div class="main-container">
+        <!-- Зона фильтров -->
+        <div class="filters">
+            <h2>Фильтры</h2>
+            <div class="filter-group">
+                <label>Год сдачи</label>
+                <select>
+                    <option>2026, 3 кв.</option>
+                    <option>2027, 2 кв.</option>
+                    <option>2030, 1 кв.</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Площадь от, кв. м.</label>
+                <input type="number" placeholder="Введите площадь">
+            </div>
+            <div class="filter-group">
+                <label>Количество комнат</label>
+                <select>
+                    <option>Студия</option>
+                    <option>1 комната</option>
+                    <option>2 комнаты</option>
+                    <option>3 комнаты</option>
+                    <option>4 комнаты</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Этаж от и до</label>
+                <div class="floor-inputs">
+                    <input type="number" placeholder="От">
+                    <input type="number" placeholder="До">
+                </div>
+            </div>
+        </div>
+        <!-- Зона карточек квартир -->
+        <div class="content">
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-text">
+                        <h3>Студия, 20.9 кв.м.</h3>
+                        <h4>4 590 000 руб</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="card-image">
+                        <img src="../экз_сайт/img/apt1.png" alt="ЖК Пангея">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-text">
+                        <h3>Студия, 29.7 кв.м.</h3>
+                        <h4>4 999 000 руб</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="card-image">
+                        <img src="../экз_сайт/img/apt2.png" alt="ЖК Лемурия">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-text">
+                        <h3>1-к квартира, 31,7 кв.м</h3>
+                        <h4>5 769 999 руб</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="card-image">
+                        <img src="../экз_сайт/img/apt3.png" alt="ЖК Атлантида">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-text">
+                        <h3>1-к квартира, 34.6 кв.м</h3>
+                        <h4>5 799 999 руб</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="card-image">
+                        <img src="../экз_сайт/img/apt4.png" alt="ЖК Эверест">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2025 RinTerraBuild. Все права защищены.</p>
+    </footer>
+    <script>
+        // Управление меню в мобильной версии
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuToggle.textContent = nav.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Управление dropdown в мобильной версии
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    const dropdown = item.querySelector('.dropdown');
+                    if (dropdown) {
+                        e.preventDefault();
+                        item.classList.toggle('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

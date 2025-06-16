@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказать звонок</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="../экз_сайт/css/csspopup.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header-top">
+        <div class="top-menu">
+            <img src="../экз_сайт/img/call.png" alt="Phone Icon"></a>
+            <img src="../экз_сайт/img/user.png" alt="User Icon">
+            <div class="../экз_сайт/img/location">
+                <img src="../экз_сайт/img/location.png" alt="Location Icon">
+                <span>Нижний Новгород</span>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="logo">RinTerraBuild</div>
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+        <nav>
+            <div class="menu-item">
+                    <a href="index.html">Главная</a>
+                </div>
+            <div class="menu-item">
+                <a href="proj.html">Проекты</a>
+                <div class="dropdown">
+                    <a href="buy.html">ЖК "Пангея"</a>
+                    <a href="#">ЖК "Лемурия"</a>
+                    <a href="#">ЖК "Атлантида"</a>
+                    <a href="#">Таунхаусы Эдем</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">Ипотека</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">География</a>
+                <div class="dropdown">
+                    <a href="#">Нижний Новгород</a>
+                    <a href="#">Иваново</a>
+                    <a href="#">Москва</a>
+                    <a href="#">Самара</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">Под ключ</a>
+            </div>
+        </nav>
+    </header>
+  <!--Контент-->  
+    <div class="main-content">
+        <h1>Выберите дом Вашей мечты!</h1>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-image">
+                    <img src="../экз_сайт/img/oasis.jpg" alt="Купить квартиру">
+                </div>
+                <h3>ЖК</h3>
+                <h4>Купить квартиру</h4>
+                <p>Заказать звонок по покупке квартиры.</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Заказать звонок</button>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="../экз_сайт/img/arcadia.jpg" alt="Купить таунхаус"> 
+                </div>
+                <h3>Таунхаусы</h3>
+                <h4>Купить таунхаус</h4>
+                <p>Заказать звонок по покупке таунхауса.</p>
+                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Заказать звонок</button>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="../экз_сайт/img/mortal.jpeg" alt="Ипотека">
+                </div>
+                <h3>Услуги</h3>
+                <h4>Ипотека</h4>
+                <p>Заказать звонок-консультацию по ипотеке.</p>
+                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Заказать звонок</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2025 RinTerraBuild. Все права защищены.</p>
+    </footer>
+    <script>
+        // menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuToggle.textContent = nav.classList.contains('active') ? '✕' : '☰';
+        });
+        // dropdown
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    const dropdown = item.querySelector('.dropdown');
+                    if (dropdown) {
+                        e.preventDefault();
+                        item.classList.toggle('active');
+                    }
+                }
+            });
+        });
+    </script>
+<!-- pop-up окошко -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Позвоните мне!</h1>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Номер телефона</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">Ваш номер не передается 3-м лицам.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Имя</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        <button type="submit" class="btn btn-primary">Заказать</button>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши проекты</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="../экз_сайт/css/styleproj.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="top-menu">
+                <img src="../экз_сайт/img/call.png" alt="Phone Icon">
+                <img src="../экз_сайт/img/user.png" alt="Email Icon">
+                <div class="location">
+                    <img src="../экз_сайт/img/location.png" alt="Location Icon">
+                    <span>Нижний Новгород</span>
+                </div>
+            </div>
+        </div>
+        <div class="logo">RinTerraBuild</div>
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+        <nav>
+            <div class="menu-item">
+                <a href="index.html">Главная</a>
+            </div>
+            <div class="menu-item">
+                <a href="proj.html">Проекты</a>
+                <div class="dropdown">
+                    <a href="buy.html">ЖК "Пангея"</a>
+                    <a href="#">ЖК "Лемурия"</a>
+                    <a href="#">ЖК "Атлантида"</a>
+                    <a href="#">Таунхаусы Эдем</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">Ипотека</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">География</a>
+                <div class="dropdown">
+                    <a href="#">Нижний Новгород</a>
+                    <a href="#">Иваново</a>
+                    <a href="#">Москва</a>
+                    <a href="#">Самара</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">Под ключ</a>
+            </div>
+        </nav>
+    </header>
+<!--Контент-->  
+    <div class="content">
+        <h1>Наши проекты</h1>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="../экз_сайт/img/pangea.webp" alt="ЖК Пангея">
+                <h3>ЖК Пангея</h3>
+                <p>г. Нижний Новгород, Канавинский район</p>
+                <a href="buy.html">Купить квартиру</a>
+            </div>
+            <div class="project-card">
+                <img src="../экз_сайт/img/lemuria.webp" alt="ЖК Лемурия">
+                <h3>ЖК Лемурия</h3>
+                <p>г. Иваново, Фрунзенский район</p>
+                <a href="#">Купить квартиру</a>
+            </div>
+            <div class="project-card">
+                <img src="../экз_сайт/img/atlantida.jpg" alt="ЖК Атлантида">
+                <h3>ЖК Атлантида</h3>
+                <p>г. Москва, Нижегородский район</p>
+                <a href="#">Купить квартиру</a>
+            </div>
+            <div class="project-card">
+                <img src="../экз_сайт/img/everest.jpg" alt="ЖК Эверест">
+                <h3>ЖК Эверест</h3>
+                <p>г. Самара, Железнодорожный район</p>
+                <a href="#">Купить квартиру</a>
+            </div>
+            <div class="project-card">
+                <img src="../экз_сайт/img/edem.jpg" alt="Таунхаусы Эдем">
+                <h3>Таунхаусы Эдем</h3>
+                <p>Ивановский район, село Песочнево</p>
+                <a href="#">Купить таунхаус</a>
+            </div>
+            <div class="project-card">
+                <img src="../экз_сайт/img/arcadia.jpg" alt="Таунхаусы Аркадия">
+                <h3>Таунхаусы Аркадия</h3>
+                <p>Ивановский район, село Говядово</p>
+                <a href="#">Купить таунхаус</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 RinTerraBuild. Все права защищены.</p>
+    </footer>
+     <script>
+        // Управление меню в мобильной версии
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuToggle.textContent = nav.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Управление dropdown в мобильной версии
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    const dropdown = item.querySelector('.dropdown');
+                    if (dropdown) {
+                        e.preventDefault();
+                        item.classList.toggle('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

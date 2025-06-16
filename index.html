@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RinTerraBuild</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="../экз_сайт/css/style.css" rel="stylesheet">
+</head>
+<body>
+   <header>
+         <div class="header-top">
+            <div class="top-menu">
+                <img src="../экз_сайт/img/call.png" alt="Phone Icon">
+                <img src="../экз_сайт/img/user.png" alt="Email Icon">
+                <div class="location">
+                    <img src="../экз_сайт/img/location.png" alt="Location Icon">
+                    <span>Нижний Новгород</span>
+                </div>
+            </div>
+        </div>
+        <div class="logo">RinTerraBuild</div>
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+        <nav>
+             <div class="menu-item">
+                <a href="index.html">Главная</a>
+            </div>
+            <div class="menu-item">
+                <a href="proj.html">Проекты</a>
+                <div class="dropdown">
+                    <a href="buy.html">ЖК "Пангея"</a>
+                    <a href="#">ЖК "Лемурия"</a>
+                    <a href="#">ЖК "Атлантида"</a>
+                    <a href="#">Таунхаусы Эдем</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">Ипотека</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">География</a>
+                <div class="dropdown">
+                    <a href="#">Нижний Новгород</a>
+                    <a href="#">Иваново</a>
+                    <a href="#">Москва</a>
+                    <a href="#">Самара</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">Под ключ</a>
+            </div>
+        </nav>
+    </header>
+<!--Контент-->  
+    <div class="main-content">
+        <h1>Новостройки по всей стране!</h1>
+        <div class="carousel-container">
+            <div class="carousel-slides">
+                <div class="carousel-slide">
+                    <img src="../экз_сайт/img/pangea.webp" alt="Новостройка 1"> 
+                </div>
+                <div class="carousel-slide">
+                    <img src="../экз_сайт/img/lemuria.webp" alt="Новостройка 2"> 
+                </div>
+                <div class="carousel-slide">
+                    <img src="../экз_сайт/img/atlantida.jpg" alt="Новостройка 3"> 
+                </div>
+                <div class="carousel-slide">
+                    <img src="../экз_сайт/img/everest.jpg" alt="Новостройка 4"> 
+                </div>
+                <div class="carousel-slide">
+                    <img src="../экз_сайт/img/ormos.jpg" alt="Новостройка 5"> 
+                </div>
+                <div class="carousel-slide">
+                    <img src="../экз_сайт/img/oasis.jpg" alt="Новостройка 6">
+                </div>
+            </div>
+            <button class="carousel-button prev">❮</button>
+            <button class="carousel-button next">❯</button>
+        </div>
+
+        <div class="text-block">
+            <h2>Lorem ipsum</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quasi porro? Consectetur, amet voluptatibus. Recusandae excepturi labore, eaque velit deleniti quisquam ad, expedita itaque nihil ducimus fugiat a, esse est. Dolor sit amet, consectetur constructum adipiscing elit. Sed do eiusmod tempor foundation incididunt ut labore et blueprint magna aliqua. Ut enim ad minim veniam, quis nostrud excavation ullamco laboris nisi ut concrete ex ea commodo structures. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum safety eu fugiat nulla engineering. Excepteur sint occaecat cupidatat non construction, sunt in culpa qui officia deserunt mollit anim id est laborum. Architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam volumus quia project sit aspernatur aut odit aut fugit. Neque porro quisquam est.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 RinTerraBuild. Все права защищены.</p>
+    </footer>
+
+    <script>
+        // Менюшка
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuToggle.textContent = nav.classList.contains('active') ? '✕' : '☰';
+        });
+        // Выпадающий список
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    const dropdown = item.querySelector('.dropdown');
+                    if (dropdown) {
+                        e.preventDefault();
+                        item.classList.toggle('active');
+                    }
+                }
+            });
+        });
+        // Карусель картинок
+        const slidesContainer = document.querySelector('.carousel-slides');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const nextButton = document.querySelector('.carousel-button.next');
+        let currentIndex = 0;
+        function showSlide(index) {
+            if (index >= slides.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else {
+                currentIndex = index;
+            }
+            slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        prevButton.addEventListener('click', () => {
+            showSlide(currentIndex - 1);
+        });
+        nextButton.addEventListener('click', () => {
+            showSlide(currentIndex + 1);
+        });
+    </script>
+</body>
+</html>
