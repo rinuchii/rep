@@ -140,7 +140,7 @@
         <p>© 2025 RinTerraBuild. Все права защищены.</p>
     </footer>
     <script>
-        // Управление меню в мобильной версии
+        // Менюшка
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
 
@@ -149,7 +149,7 @@
             menuToggle.textContent = nav.classList.contains('active') ? '✕' : '☰';
         });
 
-        // Управление dropdown в мобильной версии
+        // Список
         const menuItems = document.querySelectorAll('.menu-item');
         menuItems.forEach(item => {
             const link = item.querySelector('a');

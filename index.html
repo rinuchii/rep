@@ -98,12 +98,11 @@
             nav.classList.toggle('active');
             menuToggle.textContent = nav.classList.contains('active') ? '✕' : '☰';
         });
-        // Выпадающий список
+        // Список
         const menuItems = document.querySelectorAll('.menu-item');
         menuItems.forEach(item => {
             const link = item.querySelector('a');
             const dropdown = item.querySelector('.dropdown');
-
             if (dropdown) {
                 link.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
