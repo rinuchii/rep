@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши проекты</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="../rep/css/styleproj.css" rel="stylesheet">
+    <link href="../rep/css/styleNN.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="top-menu">
+                <img src="../rep/img/call.png" alt="Phone Icon">
+                <img src="../rep/img/user.png" alt="User Icon">
+                <div class="location">
+                    <img src="../rep/img/location.png" alt="Location Icon">
+                    <span>Нижний Новгород</span>
+                </div>
+            </div>
+        </div>
+        <div class="logo">RinTerraBuild</div>
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+        <nav>
+            <div class="menu-item">
+                <a href="index.html">Главная</a>
+            </div>
+            <div class="menu-item">
+                <a href="proj.html">Проекты</a>
+                <div class="dropdown">
+                    <a href="buy.html">ЖК "Пангея"</a>
+                    <a href="#">ЖК "Лемурия"</a>
+                    <a href="#">ЖК "Атлантида"</a>
+                    <a href="#">Таунхаусы Эдем</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="mortgage.html">Ипотека</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">География</a>
+                <div class="dropdown">
+                    <a href="#">Нижний Новгород</a>
+                    <a href="#">Иваново</a>
+                    <a href="#">Москва</a>
+                    <a href="#">Самара</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">Под ключ</a>
+            </div>
+        </nav>
+    </header>
+    <div class="main-content">
+        <h1>ЖК Нижнего Новгорода</h1>
+        <div class="blocks-container">
+            <div class="block">
+                <div class="carousel-container" id="carousel1">
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../rep/img/pangea.webp" alt="ЖК 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../rep/img/pang_yard.webp" alt="ЖК 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../rep/img/pang_hall.webp" alt="ЖК 3">
+                        </div>
+                    </div>
+                    <button class="carousel-button prev">❮</button>
+                    <button class="carousel-button next">❯</button>
+                </div>
+            </div>
+            <div class="block text-block">
+                <h2>ЖК "Пангея"</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias accusantium repellat laboriosam dolorum hic recusandae voluptatem itaque voluptas suscipit autem temporibus amet asperiores distinctio, quidem veniam aspernatur vel est libero. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo ipsam atque impedit mollitia voluptates distinctio. Quae sint ducimus, voluptatem quis maxime provident deserunt quisquam ipsum. Maiores ea qui saepe. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error animi</p>
+                <div class="go-button">
+                    <button onclick="window.location.href='buy.html'">Перейти</button>
+                </div>
+            </div>
+        </div>
+        <div class="blocks-container">
+            <div class="block">
+                <div class="carousel-container" id="carousel2">
+                    <div class="carousel-slides">
+                        <div class="carousel-slide">
+                            <img src="../rep/img/ormos.jpg" alt="ЖК 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../rep/img/orm_yard.jpg" alt="ЖК 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../rep/img/orm_hall.webp" alt="ЖК 3">
+                        </div>
+                    </div>
+                    <button class="carousel-button prev">❮</button>
+                    <button class="carousel-button next">❯</button>
+                </div>
+            </div>
+            <div class="block text-block">
+                <h2>ЖК "Ормос"</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias accusantium repellat laboriosam dolorum hic recusandae voluptatem itaque voluptas suscipit autem temporibus amet asperiores distinctio, quidem veniam aspernatur vel est libero. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo ipsam atque impedit mollitia voluptates distinctio. Quae sint ducimus, voluptatem quis maxime provident deserunt quisquam ipsum. Maiores ea qui saepe. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error animi</p>
+                <div class="go-button">
+                    <button onclick="window.location.href='mortgage.html'">Перейти</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function initCarousel(carouselId) {
+            const slidesContainer = document.querySelector(`#${carouselId} .carousel-slides`);
+            const slides = document.querySelectorAll(`#${carouselId} .carousel-slide`);
+            const prevButton = document.querySelector(`#${carouselId} .carousel-button.prev`);
+            const nextButton = document.querySelector(`#${carouselId} .carousel-button.next`);
+            let currentIndex = 0;
+
+            if (!prevButton || !nextButton) {
+                console.error(`Buttons not found for carousel ${carouselId}`);
+                return;
+            }
+
+            function showSlide(index) {
+                if (index >= slides.length) currentIndex = 0;
+                else if (index < 0) currentIndex = slides.length - 1;
+                else currentIndex = index;
+                slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            prevButton.addEventListener('click', () => showSlide(currentIndex - 1));
+            nextButton.addEventListener('click', () => showSlide(currentIndex + 1));
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            initCarousel('carousel1');
+            initCarousel('carousel2');
+        });
+    </script>
+    <script>
+        // Менюшка
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuToggle.textContent = nav.classList.contains('active') ? '✕' : '☰';
+        });
+        // Список
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(item => {
+            const link = item.querySelector('a');
+            const dropdown = item.querySelector('.dropdown');
+            if (dropdown) {
+                link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    item.classList.toggle('active');
+                }
+            });
+        }
+    });
+    </script>
+</body>
+</html>
